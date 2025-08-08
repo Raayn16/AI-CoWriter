@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback, useRef } from 'react'; // <-- FIX: Removed unused 'useEffect'
 
 // --- Helper Icons ---
 const MagicWandIcon = () => (
@@ -52,8 +52,6 @@ export default function App() {
     const abortControllerRef = useRef(null);
 
     // --- API Call Logic ---
-    // In src/App.js
-
     const generateContent = useCallback(async (currentInput, isRegeneration = false) => {
         if (!currentInput && !isRegeneration) {
             setAiOutput("");
@@ -112,7 +110,7 @@ export default function App() {
             setIsGenerating(false);
         }
     }, [systemPrompt, aiOutput]);
-
+    
     // --- Event Handlers ---
     const handleUserInputChange = (e) => {
         const text = e.target.value;
