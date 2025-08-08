@@ -22,7 +22,8 @@ exports.handler = async function (event) {
 
   // Structure the payload for the Together AI API
   const payload = {
-    model: 'meta-llama/Llama-3.1-70B-Instruct-Turbo',
+    // --- THIS IS THE FIX ---
+    model: 'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free', 
     messages: [
       {
         role: 'system',
